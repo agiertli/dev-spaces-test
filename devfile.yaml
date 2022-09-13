@@ -1,6 +1,19 @@
 schemaVersion: 2.1.0
 metadata:
   name: sample-java-devfile
+projects:
+  - name: dev-space-1
+    git:
+      remotes:
+        origin: 'https://github.com/agiertli/dev-spaces-test.git'
+      checkoutFrom:
+        revision: main  
+  - name: dev-space-2
+    git:
+      remotes:
+        origin: 'https://github.com/agiertli/dev-spaces-test-2.git'
+      checkoutFrom:
+        revision: main          
 components:
   - name: tools
     container:
