@@ -1,0 +1,73 @@
+schemaVersion: 2.1.0
+metadata:
+  name: sample-java-devfile
+components:
+  - name: tools
+    container:
+      image: quay.io/devspaces/udi-rhel8:3.1
+      memoryLimit: 3Gi
+      endpoints:
+        - exposure: public
+          name: http-booster
+          protocol: http
+          targetPort: 8080
+        - exposure: internal
+          name: debug
+          protocol: http
+          targetPort: 5005
+      volumeMounts:
+        - name: m2
+          path: /home/user/.m2
+  - name: m2
+    volume:
+      size: 1G
+commands:
+  - id: 1-build
+    exec:
+      component: tools
+      workingDir: ${PROJECTS_ROOT}/rest-http-example
+      commandLine: mvn -DskipTests clean install
+      group:
+        kind: build
+  - id: 2-run
+    exec:
+      component: tools
+      workingDir: ${PROJECTS_ROOT}/rest-http-example
+      commandLine: mvn spring-boot:run
+      group:
+        kind: run
+  - id: 3-run-in-debug
+    exec:
+      component: tools
+      workingDir: ${PROJECTS_ROOT}/rest-http-example
+      commandLine: >-
+          mvn spring-boot:run -Dspring-boot.run.jvmArguments="-Xdebug
+          -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005"
+      group:
+        kind: run
+  - id: 4-run-tests
+    exec:
+      component: tools
+      workingDir: ${PROJECTS_ROOT}/rest-http-example
+      commandLine: mvn verify
+      group:
+        kind: test
+  - id: 5-log-into-cluster
+    exec:
+      component: tools
+      workingDir: ${PROJECTS_ROOT}/rest-http-example
+      commandLine: |
+          echo
+          echo "You are already logged in to the current cluster. However, if you want"
+          echo "to deploy this application to a different OpenShift cluster, you must"
+          echo "run 'oc login ...' in the tools terminal."
+          echo
+      group:
+        kind: run
+  - id: 6-deploy-to-openshift
+    exec:
+      component: tools
+      workingDir: ${PROJECTS_ROOT}/rest-http-example
+      commandLine: oc project $DEVWORKSPACE_NAMESPACE && mvn fabric8:deploy -Popenshift -DskipTests
+      group:
+        kind: run
