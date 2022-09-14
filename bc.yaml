@@ -13,6 +13,7 @@ spec:
     type: Git
     git:
       uri: https://github.com/agiertli/dev-spaces-test
+      ref: main
   strategy:
     type: Docker
   output:
