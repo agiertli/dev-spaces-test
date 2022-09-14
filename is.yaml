@@ -1,0 +1,5 @@
+apiVersion: image.openshift.io/v1
+kind: ImageStream
+metadata:
+  name: dev-spaces-spring-boot
+  namespace: dev-spaces-spring-boot-app
