@@ -7,13 +7,7 @@ projects:
       remotes:
         origin: 'https://github.com/agiertli/dev-spaces-test.git'
       checkoutFrom:
-        revision: main  
-  - name: dev-space-2
-    git:
-      remotes:
-        origin: 'https://github.com/agiertli/dev-spaces-test-2.git'
-      checkoutFrom:
-        revision: main          
+        revision: main       
 components:
   - name: tools
     container:
