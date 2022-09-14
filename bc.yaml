@@ -1,0 +1,21 @@
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  name: dev-spaces-spring-boot
+  labels:
+    app: dev-spaces-spring-boot
+spec:
+  triggers:
+    - type: GitHub
+      github:
+        secret: github-webhook
+  source:
+    type: Git
+    git:
+      uri: https://github.com/agiertli/dev-spaces-test
+  strategy:
+    type: Docker
+  output:
+    to:
+      kind: ImageStreamTag
+      name: dev-spaces-spring-boot:latest
