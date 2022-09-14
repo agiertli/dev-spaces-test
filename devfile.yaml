@@ -32,21 +32,21 @@ commands:
   - id: 1-build
     exec:
       component: tools
-      workingDir: ${PROJECTS_ROOT}/dev-space-1
+      workingDir: ${PROJECT_SOURCE}
       commandLine: mvn -DskipTests clean install
       group:
         kind: build
   - id: 2-run
     exec:
       component: tools
-      workingDir: ${PROJECTS_ROOT}/dev-space-1
+      workingDir: ${PROJECT_SOURCE}
       commandLine: mvn spring-boot:run
       group:
         kind: run
   - id: 3-run-in-debug
     exec:
       component: tools
-      workingDir: ${PROJECTS_ROOT}/dev-space-1
+      workingDir: ${PROJECT_SOURCE}
       commandLine: >-
           mvn spring-boot:run -Dspring-boot.run.jvmArguments="-Xdebug
           -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005"
@@ -55,14 +55,14 @@ commands:
   - id: 4-run-tests
     exec:
       component: tools
-      workingDir: ${PROJECTS_ROOT}/dev-space-1
+      workingDir: ${PROJECT_SOURCE}
       commandLine: mvn verify
       group:
         kind: test
   - id: 5-log-into-cluster
     exec:
       component: tools
-      workingDir: ${PROJECTS_ROOT}/dev-space-1
+      workingDir: ${PROJECT_SOURCE}
       commandLine: |
           echo
           echo "You are already logged in to the current cluster. However, if you want"
@@ -74,7 +74,7 @@ commands:
   - id: 6-deploy-to-openshift
     exec:
       component: tools
-      workingDir: ${PROJECTS_ROOT}/dev-space-1
+      workingDir: ${PROJECT_SOURCE}
       commandLine: oc project $DEVWORKSPACE_NAMESPACE && mvn fabric8:deploy -Popenshift -DskipTests
       group:
         kind: run
