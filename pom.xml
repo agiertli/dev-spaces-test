@@ -35,6 +35,10 @@
 
 	<profiles>
 	    <profile>
+		      <properties>
+          <fabric8.generator.fromMode>docker</fabric8.generator.fromMode>
+          <fabric8.generator.from>fabric8/s2i-java:3.0-java11</fabric8.generator.from>
+      </properties>
       <id>openshift</id>
       <build>
         <plugins>
