@@ -1,7 +1,6 @@
 schemaVersion: 2.1.0
 metadata:
   name: sample-java-devfile
-projects:  
 events:
   preStart:
     - init-container-command  
