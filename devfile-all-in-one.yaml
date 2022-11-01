@@ -5,7 +5,7 @@ projects:
 components:
   - name: tools
     container:
-      image: quay.io/devspaces/udi-rhel8:3.1
+      image: registry.redhat.io/devspaces/udi-rhel8:3.2-26
       memoryLimit: 3Gi
       endpoints:
         - exposure: public
