@@ -1,17 +1,10 @@
 schemaVersion: 2.1.0
 metadata:
   name: sample-java-devfile
-projects:
-  - name: dev-space-1
-    git:
-      remotes:
-        origin: 'https://github.com/agiertli/dev-spaces-test.git'
-      checkoutFrom:
-        revision: main       
 components:
   - name: tools
     container:
-      image: quay.io/devspaces/udi-rhel8:3.1
+      image: registry.redhat.io/devspaces/udi-rhel8:3.2-26
       memoryLimit: 3Gi
       endpoints:
         - exposure: public
