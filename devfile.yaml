@@ -1,6 +1,6 @@
 schemaVersion: 2.1.0
 metadata:
-  generateName: sample-java-devfile-
+  name: sample-java-devfile-
 components:
   - name: tools
     container:
