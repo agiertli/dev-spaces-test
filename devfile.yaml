@@ -11,6 +11,8 @@ components:
           name: http-booster
           protocol: http
           targetPort: 8080
+          attributes:
+            discoverable: true
         - exposure: internal
           name: debug
           protocol: http
