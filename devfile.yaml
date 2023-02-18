@@ -13,6 +13,7 @@ components:
           targetPort: 8080
           attributes:
             discoverable: true
+            urlRewriteSupported: 'true'
         - exposure: internal
           name: debug
           protocol: http
