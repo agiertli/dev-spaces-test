@@ -21,14 +21,6 @@ components:
       volumeMounts:
         - name: m2
           path: /home/user/.m2
-  - name: httpd-24
-    container:
-      image: registry.redhat.io/rhel8/httpd-24:latest
-  - name: nginx
-    container:
-      image: registry.access.redhat.com/ubi8/ubi-minimal:latest
-      command: ["/bin/sleep"]
-      args: ["infinity"]
   - name: m2
     volume:
       size: 1G
