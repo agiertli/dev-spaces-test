@@ -26,7 +26,7 @@ components:
       image: registry.redhat.io/rhel8/httpd-24:latest
   - name: nginx
     container:
-      image: registry.redhat.io/rhscl/nginx-118-rhel7:latest
+      image: registry.access.redhat.com/ubi8/nginx-118:latest
   - name: m2
     volume:
       size: 1G
