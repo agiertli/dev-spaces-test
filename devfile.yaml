@@ -38,12 +38,6 @@ components:
       env:
         - name: ENV_VAR
           value: value
-      endpoints:
-        - name: maven-server
-          targetPort: 3101
-          protocol: https
-          secure: 'true'
-          exposure: public
       command: ['tail']
       args: ['-f', '/dev/null']
   - name: m2
