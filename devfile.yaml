@@ -21,22 +21,12 @@ components:
       volumeMounts:
         - name: m2
           path: /home/user/.m2
-  - name: maven-2
+  - name: httpd-24
     container:
-      image: eclipse/maven-jdk8:latest
-      env:
-        - name: ENV_VAR
-          value: value
-      command: ['tail']
-      args: ['-f', '/dev/null']
-  - name: maven
+      image: registry.redhat.io/rhel8/httpd-24:latest
+  - name: nginx
     container:
-      image: eclipse/maven-jdk8:latest
-      env:
-        - name: ENV_VAR
-          value: value
-      command: ['tail']
-      args: ['-f', '/dev/null']
+      image: registry.redhat.io/nginx/nginx:latest
   - name: m2
     volume:
       size: 1G
