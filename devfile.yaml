@@ -5,6 +5,9 @@ components:
   - name: tools
     container:
       image: registry.redhat.io/devspaces/udi-rhel8:3.2-26
+      env:
+       - name: USE_JAVA8
+         value: "true"
       memoryLimit: 3Gi
       endpoints:
         - exposure: public
