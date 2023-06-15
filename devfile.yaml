@@ -22,11 +22,11 @@ components:
           protocol: http
           targetPort: 5005
       volumeMounts:
-        - name: m2
-          path: /home/user/.m2
-  - name: m2
+        - name: userHome
+          path: /home/user
+  - name: userHome
     volume:
-      size: 1G
+      size: 5G
 commands:
   - id: 1-build
     exec:
