@@ -26,7 +26,7 @@ components:
           path: /home/user/.m2
   - name: m2
     volume:
-      size: 5G
+      size: 10G
 commands:
   - id: 1-build
     exec:
