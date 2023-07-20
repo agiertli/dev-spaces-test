@@ -4,11 +4,14 @@ metadata:
 components:
   - name: tools
     container:
-      image: registry.redhat.io/devspaces/udi-rhel8:3.6
+      image: registry.redhat.io/devspaces/udi-rhel8:3.7
       env:
        - name: USE_JAVA8
          value: "true"
       memoryLimit: 3Gi
+      env:
+        - name: USE_JAVA17
+          value: true
       endpoints:
         - exposure: public
           name: http-booster
