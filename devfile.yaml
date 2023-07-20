@@ -11,7 +11,7 @@ components:
       memoryLimit: 3Gi
       env:
         - name: USE_JAVA17
-          value: true
+          value: "true"
       endpoints:
         - exposure: public
           name: http-booster
