@@ -4,7 +4,7 @@ metadata:
 components:
   - name: tools
     container:
-      image: registry.redhat.io/devspaces/udi-rhel8:3.8
+      image: registry.redhat.io/devspaces/udi-rhel8:3.6
       memoryLimit: 3Gi
       env:
         - name: USE_JAVA17
