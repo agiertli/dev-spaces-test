@@ -4,7 +4,7 @@ metadata:
 components:
   - name: tools
     container:
-      image: registry.redhat.io/devspaces/udi-rhel8:3.9
+      image: registry.redhat.io/devspaces/udi-rhel8:3.8
       memoryLimit: 3Gi
       env:
         - name: USE_JAVA17
@@ -21,12 +21,6 @@ components:
           name: debug
           protocol: http
           targetPort: 5005
-  #     volumeMounts:
-  #       - name: m2
-  #         path: /home/user/.m2
-  # - name: m2
-  #   volume:
-  #     size: 10G
 commands:
   - id: 1-build
     exec:
