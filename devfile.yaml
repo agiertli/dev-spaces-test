@@ -29,13 +29,13 @@ components:
   - name: m2
     volume:
       size: 10G
-# events:
-#   postStart:
-#     - set-java-17         
+events:
+  postStart:
+    - set-java-17         
 commands:
   - id: set-java-17
     exec:
-      commandLine: sdk use java 17.0.3-tem
+      commandLine: source ~/.bashrc && sdk use java 17.0.3-tem
       component: tools
   - id: 1-build
     exec:
