@@ -82,5 +82,5 @@ commands:
       group:
         kind: run
 events:
-  preStart:
+  postStart:
     - set-java-17   
