@@ -29,9 +29,9 @@ components:
   - name: m2
     volume:
       size: 10G
-events:
-  postStart:
-    - set-java-17         
+# events:
+#   postStart:
+#     - set-java-17         
 commands:
   - id: set-java-17
     exec:
