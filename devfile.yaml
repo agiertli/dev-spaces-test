@@ -27,6 +27,9 @@ components:
   - name: m2
     volume:
       size: 10G
+events:
+  postStart:
+    - set-java-17         
 commands:
   - id: set-java-17
     exec:
@@ -81,6 +84,3 @@ commands:
       commandLine: oc project $DEVWORKSPACE_NAMESPACE && mvn fabric8:deploy -Popenshift -DskipTests
       group:
         kind: run
-# events:
-#   postStart:
-#     - set-java-17   
