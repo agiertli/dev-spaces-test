@@ -81,6 +81,6 @@ commands:
       commandLine: oc project $DEVWORKSPACE_NAMESPACE && mvn fabric8:deploy -Popenshift -DskipTests
       group:
         kind: run
-events:
-  postStart:
-    - set-java-17   
+# events:
+#   postStart:
+#     - set-java-17   
