@@ -1,0 +1,7 @@
+git config --local commit.gpgsign true
+git config --local tag.gpgsign true
+git config --local gpg.x509.program gitsign
+git config --local gpg.format x509
+git config --local gitsign.fulcio $FULCIO_URL
+git config --local gitsign.rekor $REKOR_URL
+git config --local gitsign.issuer $OIDC_ISSUER_URL
