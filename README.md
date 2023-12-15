@@ -8,3 +8,6 @@ Sample Java project to test Openshift Dev Spaces
 // signed commit
 
 // yet another signed commit
+
+
+// yet another final commit
