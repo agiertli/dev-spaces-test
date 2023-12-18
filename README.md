@@ -17,3 +17,5 @@ Sample Java project to test Openshift Dev Spaces
 // signing commit test
 
 // after cosign initialize
+
+// after proper cosign initialize
