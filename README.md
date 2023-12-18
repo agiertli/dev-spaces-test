@@ -15,3 +15,5 @@ Sample Java project to test Openshift Dev Spaces
 // signing commit after fulcio update
 
 // signing commit test
+
+// after cosign initialize
