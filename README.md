@@ -28,4 +28,6 @@ Sample Java project to test Openshift Dev Spaces
 
 // signed commit
 
+// another pipeline test
+
 // another signed commit
