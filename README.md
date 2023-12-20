@@ -25,3 +25,5 @@ Sample Java project to test Openshift Dev Spaces
 //testing improved gitsign verify
 
 // unsigned commit
+
+// another signed commit
