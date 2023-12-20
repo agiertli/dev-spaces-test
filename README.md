@@ -23,3 +23,5 @@ Sample Java project to test Openshift Dev Spaces
 //testing tekton
 
 //testing improved gitsign verify
+
+// unsigned commit
