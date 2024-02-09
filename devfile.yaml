@@ -5,7 +5,7 @@ components:
   - name: tools
     container:
       image: quay.io/devfile/universal-developer-image:ubi8-latest
-      memoryLimit: 3Gi
+      memoryLimit: 2Gi
       env:
         - name: USE_JAVA17
           value: "true"
